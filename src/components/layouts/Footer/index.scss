@@ -173,6 +173,7 @@
     text-align: center;
     margin-top: 40px;
     color: var(--dark-200-color);
+    order: 2;
 
     p {
       margin-bottom: 7px;
@@ -207,4 +208,29 @@
     text-align: center;
     color: var();
   }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .footer {
+    &__logo {
+      text-align: center;
+    }
+  }
+
+  .footer__fanpage-wrap {
+    order: 1;
+  }
+
+  .footer__info-wrap {
+    order: 2;
+  }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
 }

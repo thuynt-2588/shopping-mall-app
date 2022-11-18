@@ -12,9 +12,9 @@ import clsx from "clsx";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="container grid">
+      <div className="container grid wide">
         <div className="grid__row">
-          <div className="grid__column-3">
+          <div className="col l-3 m-6 c-12">
             <div className="footer__logo">
               <a href="/" title="Evo Milana">
                 <img
@@ -73,7 +73,7 @@ const Footer = () => {
 
           {FooterData.map((item, index) => {
             return (
-              <div className="grid__column-3" key={index}>
+              <div className="col l-3 m-6 c-12" key={index}>
                 <h4 className="footer__heading">{item.title}</h4>
                 <ul className="footer-list">
                   {item?.child.map((child, index) => (
@@ -107,7 +107,7 @@ const Footer = () => {
           })}
         </div>
         <div className="grid__row">
-          <div className="grid__column-8">
+          <div className="col l-8 m-6 c-12 footer__info-wrap">
             <div className="footer__info">
               <p>
                 Công ty cổ phần Evo Milana - MST: 0000000000 do sở Kế Hoạch và
@@ -118,7 +118,7 @@ const Footer = () => {
               </p>
             </div>
           </div>
-          <div className="grid__column-4">
+          <div className="col l-4 m-6 c-12 footer__fanpage-wrap">
             <div className="footer__fanpage">
               <h4 className="footer__fanpage-title">Fanpage</h4>
               <iframe
