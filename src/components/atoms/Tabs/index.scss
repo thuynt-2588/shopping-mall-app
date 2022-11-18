@@ -1,0 +1,42 @@
+.tab__ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    height: 3.125rem;
+    border-bottom: 0.0625rem solid var(--gray-900-color);
+}
+
+.tab__li {
+    flex: 1 1;
+    text-align: center;
+    border-right: 0.0625rem solid var(--gray-900-color);
+    position: relative;
+
+    a {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.9375rem;
+        line-height: 1.375rem;
+        color: var(--gray-450-color);
+    }
+
+    &.active {
+        &::before {
+            content: "";
+            position: absolute;
+            height: 0.125rem;
+            left: 1.875rem;
+            right: 1.875rem;
+            bottom: -0.0625rem;
+            background-color: var(--orange-200-color);
+        }
+
+        a {
+            font-weight: 600;
+            color: var(--dark-50-color);
+        }
+    }
+}
