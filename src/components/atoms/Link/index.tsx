@@ -2,17 +2,18 @@ import React from "react";
 import "./index.scss";
 
 interface Props {
+  href: string;
   className?: string;
   onClick: (e: any) => void;
   children?: React.ReactNode;
 }
 
-const Button: React.FC<Props> = ({ children, className, onClick }) => {
+const Link: React.FC<Props> = ({ href, className, children, onClick }) => {
   return (
-    <button className={className} onClick={onClick}>
+    <a href={href} className={className} onClick={onClick}>
       {children}
-    </button>
+    </a>
   );
 };
 
-export default Button;
+export default Link;
