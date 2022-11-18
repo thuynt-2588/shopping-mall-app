@@ -2,6 +2,7 @@ import clsx from "clsx";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import routesName from "../../../../../routes/enum.routes";
+import Button from "../../../../atoms/Button";
 import { ChevronDownIcon, ChevronUpIcon } from "../../../../atoms/Icons";
 import "./index.scss";
 
@@ -23,9 +24,9 @@ const SidebarItem: React.FC<Props> = ({ item, className }) => {
       <li className={clsx(item.routes ? "sidebar__item-child" : "")}>
         <Link to={item.path} className="sidebar__item-title">
           {item.title}
-          <button onClick={handleToggleChild} className="sidebar__item-btn">
+          <Button className="sidebar__item-btn" onClick={handleToggleChild}>
             {isShowSidebarItem ? <ChevronDownIcon /> : <ChevronUpIcon />}
-          </button>
+          </Button>
         </Link>
 
         <ul
