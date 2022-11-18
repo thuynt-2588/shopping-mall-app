@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useContext } from "react";
+import Button from "../../../atoms/Button";
 import { CloseIcon } from "../../../atoms/Icons";
 import { HomeContext } from "../../../pages/Home/context/HomeContext";
 import "./index.scss";
@@ -15,13 +16,9 @@ const SideBar: React.FC = () => {
         className={clsx("sidebar__menu-wrap", isOpenSideBar ? "active" : "")}
       >
         <div className="sidebar__menu-header">
-          <button
-            type="button"
-            className="sidebar__menu-close"
-            onClick={onToggleSidebar}
-          >
+          <Button className="sidebar__menu-close" onClick={onToggleSidebar}>
             <CloseIcon className="sidebar__menu-close-icon" />
-          </button>
+          </Button>
         </div>
         <ul
           className={clsx("sidebar__menu-list", isOpenSideBar ? "active" : "")}

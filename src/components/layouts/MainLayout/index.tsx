@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer";
 import Header from "../Header";
 import SideBar from "../Header/SideBar";
 
@@ -12,6 +13,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
       <Header />
       <SideBar />
       {children}
+      <Footer />
     </div>
   );
 };

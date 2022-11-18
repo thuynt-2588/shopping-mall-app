@@ -16,7 +16,9 @@ const Breadcrumb: React.FC<Props> = ({ items }) => {
             <li key={key} className="breadcrumb__li">
               <a
                 {...(url ? { href: url } : {})}
-                className={clsx(url ? "breadcrumb__link" : "breadcrumb__link-not")}
+                className={clsx(
+                  url ? "breadcrumb__link" : "breadcrumb__link-not"
+                )}
               >
                 {label}
               </a>
