@@ -1,0 +1,25 @@
+.banner-login {
+    background-color: #f4f5f6 url(../../../assets/images/banner_login.jpg) no-repeat top;;
+}
+
+.btn-login {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.txt-forget {
+    text-align: right;
+
+    a {
+        color: var(--orange-200-color);
+    }
+}
+
+.txt-notes {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-align: center;
+    color: var(--gray-450-color);
+    margin-top: 0.625rem;
+    margin-bottom: 0;
+}

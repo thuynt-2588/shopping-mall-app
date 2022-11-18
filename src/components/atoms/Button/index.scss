@@ -1,3 +1,20 @@
 button {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1.75rem;
+  line-height: normal;
+  border: 0.0625rem solid var(--orange-200-color);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--white-color);
+  border-radius: 0.25rem;
   cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--orange-200-color);
 }
