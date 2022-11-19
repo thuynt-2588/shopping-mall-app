@@ -6,9 +6,9 @@
         padding: 10px 8px;
         padding-right: 16px;
         text-decoration: none;
-        color: #c8c8c8;
+        color: var(--gray-800-color);
         display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid var(--dark-300-color);
         text-transform: uppercase;
         font-size: 0.8125rem;
         line-height: 1.125rem;
@@ -30,9 +30,9 @@
         padding: 10px 8px;
         padding-right: 35px;
         text-decoration: none;
-        color: #c8c8c8;
+        color: var(--gray-800-color);
         display: block;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid var(--dark-300-color);
         text-transform: uppercase;
         font-size: 13px;
         line-height: 18px;
@@ -43,6 +43,25 @@
 
         &:hover {
           color: var(--orange-200-color);
+
+          svg {
+            fill: var(--orange-200-color);
+          }
+        }
+      }
+
+      &-ul {
+        &--show {
+          display: block;
+        }
+
+        &--hide {
+          display: none;
+        }
+
+        .sidebar__item-child a {
+          padding-left: 16px;
+          text-transform: capitalize;
         }
       }
 
@@ -62,9 +81,4 @@
       border: none;
     }
   }
-}
-
-.sidebar__item-child-ul .sidebar__item-child a {
-  padding-left: 16px;
-  text-transform: capitalize;
 }

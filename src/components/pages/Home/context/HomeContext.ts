@@ -1,10 +1,8 @@
 import React from "react";
 
 interface HomeContextProps {
-    isOpenSideBar: boolean;
-    isOpenChild: boolean;
-    onToggleSidebar: () => void;
-    onToggleChild: () => void;
+  isOpenSideBar: boolean;
+  onToggleSidebar: () => void;
 }
 
 export const HomeContext = React.createContext<HomeContextProps>({} as any);

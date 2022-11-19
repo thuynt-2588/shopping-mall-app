@@ -21,11 +21,13 @@ const Header = () => {
             </button>
           </div>
           <div className="header__logo">
-            <img
-              src={logo}
-              alt="Logo Evo Milana"
-              className="header__logo-image"
-            />
+            <a href="/" className="header__logo-link">
+              <img
+                src={logo}
+                alt="Logo Evo Milana"
+                className="header__logo-image"
+              />
+            </a>
           </div>
           <div className="header__with-search-cart">
             <div className="header__search">
