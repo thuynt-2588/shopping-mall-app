@@ -1,0 +1,40 @@
+.breadcrumb {
+    margin: 75px 0 0;
+    background: #f3f5f7;
+
+    &__ul {
+        padding: 10px 16px;
+        color: var(--dark-500-color);
+        text-align: left;
+        background-color: transparent;
+    }
+
+    &__li {
+        display: inline;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+
+        &+li:before {
+            padding: 8px;
+            color: black;
+            content: "/\00a0";
+        }
+    }
+
+    &__link {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: var(--gray-700-color);
+        text-decoration: none;
+
+        &:hover {
+            color: var(--orange-200-color);
+        }
+
+        &-not {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            color: var(--orange-400-color);
+        }
+    }
+}
