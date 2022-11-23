@@ -11,6 +11,7 @@ const routesName = {
     PRODUCT_SKIN_DRESS: "/product/skin/dress",
     PRODUCT_SKIN_SKIRT: "/product/skin/skirt",
     PRODUCT_FOOTWEAR: "/product/footwear",
+    ACCOUNT_INFORMATION: "account",
 }
 
 export default routesName;
