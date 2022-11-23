@@ -61,4 +61,12 @@ export const SidebarData: Routes[] = [
     path: routesName.REGISTER,
     title: "Đăng ký",
   },
+  {
+    path: routesName.ACCOUNT_INFORMATION,
+    title: "Tài khoản",
+  },
+  {
+    path: routesName.LOGOUT,
+    title: "Đăng xuất",
+  },
 ];
