@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { logout } from "../../../../../firebase";
 import routesName from "../../../../../routes/enum.routes";
 import Button from "../../../../atoms/Button";
 import { ChevronDownIcon, ChevronUpIcon } from "../../../../atoms/Icons";
@@ -55,7 +56,11 @@ const SidebarItem: React.FC<Props> = ({ item, className }) => {
           item.path === routesName.ROOT ? "active" : ""
         )}
       >
-        <Link to={item.path}>{item.title}</Link>
+        {item.title === "Đăng xuất" ? (
+          <Button onClick={logout} className="btn-logout">{item.title}</Button>
+        ) : (
+          <Link to={item.path}>{item.title}</Link>
+        )}
       </li>
     );
   }
