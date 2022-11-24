@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import logo from "../../../assets/images/logo.png";
+import Button from "../../atoms/Button";
 import { BagShoppingIcon, BarsIcon, SearchIcon } from "../../atoms/Icons";
 import { HomeContext } from "../../pages/Home/context/HomeContext";
 import "./index.scss";
@@ -12,13 +13,9 @@ const Header = () => {
       <div className="container">
         <div className="header__navbar">
           <div className="header__menu">
-            <button
-              type="button"
-              className="header__menu-button"
-              onClick={onToggleSidebar}
-            >
+            <Button className="header__menu-button" onClick={onToggleSidebar}>
               <BarsIcon className="header__menu-icon" />
-            </button>
+            </Button>
           </div>
           <div className="header__logo">
             <a href="/" className="header__logo-link">

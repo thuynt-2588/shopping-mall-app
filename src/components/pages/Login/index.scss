@@ -1,0 +1,49 @@
+.form-login__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1.875rem;
+    margin-bottom: 1.25rem;
+
+    .banner-login {
+        background: #f4f5f6 url(../../../assets/images/banner_login.jpg) no-repeat top;
+        padding: 23.125rem 1.25rem 1.875rem;
+
+        &__title {
+            font-weight: 500;
+            margin-bottom: 0.625rem;
+            text-transform: uppercase;
+            font-size: 1rem;
+            line-height: 1.375rem;
+            color: var(--dark-50-color);
+        }
+
+        &__content {
+            p {
+                margin-bottom: 0.5rem;
+                margin-top: 0 !important;
+                position: relative;
+                padding-left: 1.375rem;
+                font-size: 0.8125rem;
+                line-height: 1.3;
+
+                &::after {
+                    content: "";
+                    height: 0.9375rem;
+                    width: 0.9375rem;
+                    background-image: url(../../../assets/icons/check_done_icon.svg);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    position: absolute;
+                }
+            }
+        }
+    }
+}
+
+.grid__column-6 {
+    padding: 0;
+}
