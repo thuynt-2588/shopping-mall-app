@@ -6,6 +6,7 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
   signOut,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
 
 import {
@@ -29,7 +30,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+const auth = getAuth(app);
 const db = getFirestore(app);
 
 const googleProvider = new GoogleAuthProvider();
@@ -55,10 +56,24 @@ const signInWithGoogle = async () => {
 
 const logInWithEmailAndPassword = async (email: string, password: string) => {
   try {
-    const { user } = await signInWithEmailAndPassword(auth, email, password);
+    await signInWithEmailAndPassword(auth, email, password);
   } catch (err: any) {
+    alert(err.message);
+  }
+};
+
+const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
+  try {
+    const res = await createUserWithEmailAndPassword(auth, email, password);
+    const user = res.user;
+    await addDoc(collection(db, "users"), {
+      id: user.uid,
+      name,
+      authProvider: "local",
+      email,
+    });
+  } catch (err) {
     console.error(err);
-    // alert(err.message);
   }
 };
 
@@ -66,4 +81,4 @@ const logout = () => {
   signOut(auth);
 };
 
-export { auth, db, signInWithGoogle, logInWithEmailAndPassword, logout };
+export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, logout };

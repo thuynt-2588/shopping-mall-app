@@ -6,8 +6,11 @@ import LoginForm from "../../organisms/LoginForm";
 import "./index.scss";
 import { signInWithGoogle } from "../../../firebase";
 import RegisterForm from "../../organisms/RegisterForm";
+import { useSelector } from "react-redux";
 
 function LoginPage() {
+  const selectedTab = useSelector((state: any) => state.tab.currentTab);
+  
   return (
     <MainLayout>
       <Breadcrumb items={items} />
@@ -34,9 +37,8 @@ function LoginPage() {
                 <div className="form-login__input">
                   <Tabs tabs={tabs} />
                   <div className="form-login__wrapper">
-                    <LoginForm />
+                    {selectedTab === 1 ? <LoginForm /> : <RegisterForm />}
 
-                    <RegisterForm />
                     <div className="form-login__break-line">
                       <span>hoặc đăng nhập qua</span>
                     </div>
