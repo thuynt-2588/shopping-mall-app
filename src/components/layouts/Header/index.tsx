@@ -1,13 +1,14 @@
-import { useContext } from "react";
+import React from "react";
 import logo from "../../../assets/images/logo.png";
 import Button from "../../atoms/Button";
 import { BagShoppingIcon, BarsIcon, SearchIcon } from "../../atoms/Icons";
-import { HomeContext } from "../../pages/Home/context/HomeContext";
 import "./index.scss";
 
-const Header = () => {
-  const { onToggleSidebar } = useContext(HomeContext);
+type Props = {
+  onToggleSidebar: () => void;
+};
 
+const Header: React.FC<Props> = ({ onToggleSidebar }) => {
   return (
     <header className="header">
       <div className="container">

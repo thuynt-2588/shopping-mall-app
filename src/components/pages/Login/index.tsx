@@ -6,17 +6,20 @@ import LoginForm from "../../organisms/LoginForm";
 import "./index.scss";
 import { signInWithGoogle } from "../../../firebase";
 import RegisterForm from "../../organisms/RegisterForm";
+import { useSelector } from "react-redux";
 
 function LoginPage() {
+  const selectedTab = useSelector((state: any) => state.tab.currentTab);
+
   return (
     <MainLayout>
       <Breadcrumb items={items} />
 
       <div className="container grid">
         <div className="grid__row justify-center">
-          <div className="grid__column-8">
+          <div className="col l-8 m-12 c-12">
             <div className="form-login__wrap">
-              <div className="grid__column-6">
+              <div className="m-6 c-12">
                 <div className="banner-login">
                   <div className="banner-login__title">
                     QUYỀN LỢI THÀNH VIÊN
@@ -30,13 +33,12 @@ function LoginPage() {
                   </div>
                 </div>
               </div>
-              <div className="grid__column-6">
+              <div className="m-6 c-12">
                 <div className="form-login__input">
                   <Tabs tabs={tabs} />
                   <div className="form-login__wrapper">
-                    <LoginForm />
+                    {selectedTab === 1 ? <LoginForm /> : <RegisterForm />}
 
-                    <RegisterForm />
                     <div className="form-login__break-line">
                       <span>hoặc đăng nhập qua</span>
                     </div>

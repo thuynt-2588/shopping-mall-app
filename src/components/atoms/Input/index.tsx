@@ -11,7 +11,7 @@ type Props = {
   placeholder?: string;
   type: string;
   onChange: (e: any) => void;
-  errors?: string[];
+  errors?: string;
 };
 
 export const Input: React.FC<Props> = ({

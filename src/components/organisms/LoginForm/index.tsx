@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Button from "../../atoms/Button";
@@ -10,8 +10,13 @@ import {
   signInWithGoogle,
 } from "../../../firebase";
 import "./index.scss";
+import clsx from "clsx";
 
-const LoginForm = () => {
+type Props = {
+  className?: string;
+}
+
+const LoginForm: React.FC<Props> = ({ className }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, loading, error] = useAuthState(auth);
@@ -24,7 +29,7 @@ const LoginForm = () => {
   }, [user, loading]);
 
   return (
-    <form className="form-login__box">
+    <form className={clsx("form-login__box", className)}>
       <Input
         type="text"
         label="Email"

@@ -1,15 +1,16 @@
 import clsx from "clsx";
-import { useContext } from "react";
 import Button from "../../../atoms/Button";
 import { CloseIcon } from "../../../atoms/Icons";
-import { HomeContext } from "../../../pages/Home/context/HomeContext";
 import "./index.scss";
 import { SidebarData } from "./sidebar.config";
 import SidebarItem from "./SideBarItem";
 
-const SideBar: React.FC = () => {
-  const { isOpenSideBar, onToggleSidebar } = useContext(HomeContext);
+type Props = {
+  isOpenSideBar: boolean;
+  onToggleSidebar: () => void;
+};
 
+const SideBar: React.FC<Props> = ({ isOpenSideBar, onToggleSidebar }) => {
   return (
     <>
       <div
