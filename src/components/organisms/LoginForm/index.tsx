@@ -1,30 +1,52 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useState } from "react";
 import Button from "../../atoms/Button";
 import Input from "../../atoms/Input";
 import Link from "../../atoms/Link";
 import {
   auth,
   logInWithEmailAndPassword,
-  signInWithGoogle,
 } from "../../../firebase";
 import "./index.scss";
+import clsx from "clsx";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+type Props = {
+  className?: string;
+}
+
+const LoginForm: React.FC<Props> = ({ className }) => {
+  const navigate = useNavigate();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, loading, error] = useAuthState(auth);
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (loading) {
-      return;
-    }
-    if (user) navigate("/");
-  }, [user, loading]);
+
+
+  const handleLogin = async (e: any) => {
+    e.preventDefault();
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userData) => {
+        const user = userData.user;
+        navigate("/");
+        toast.success("Đăng nhập thành công !", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+      })
+      .catch((error) => {
+        if(error) {
+          toast.error("Bạn đã sai email hoặc password !", {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        }
+        
+      });
+  };
 
   return (
-    <form className="form-login__box">
+    <form className={clsx("form-login__box", className)}>
       <Input
         type="text"
         label="Email"
@@ -48,15 +70,10 @@ const LoginForm = () => {
           Quên mật khẩu?
         </Link>
       </div>
-      <Button
-        className="btn btn-primary btn-login"
-        onClick={(e) => {
-          e.preventDefault();
-          logInWithEmailAndPassword(email, password);
-        }}
-      >
+      <Button className="btn btn-primary btn-login" onClick={handleLogin}>
         Đăng nhập
       </Button>
+      <ToastContainer />
       <p className="txt-notes">
         Evo Milana cam kết bảo mật và sẽ không bao giờ đăng <br /> hay chia sẻ
         thông tin mà chưa có được sự đồng ý của bạn.
