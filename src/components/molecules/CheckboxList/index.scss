@@ -1,0 +1,13 @@
+.checkbox__list {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 40px;
+  border-radius: 2px;
+  background-color: var(--white-color);
+  padding: 8px;
+  list-style: none;
+  display: none;
+  z-index: 1;
+  border: 1px solid var(--orange-200-color);
+}

@@ -1,0 +1,45 @@
+.sort-group {
+  &__list {
+    display: flex;
+  }
+
+  &__wrap {
+    position: relative;
+    min-width: 200px;
+    height: 34px;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+    cursor: pointer;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    margin-left: 0.5rem;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px;
+
+    &-left {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+.checkbox__list.active {
+  display: block;
+}
+
+.radio__list.active {
+  display: block;
+}

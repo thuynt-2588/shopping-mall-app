@@ -1,0 +1,111 @@
+$slide-count: 5;
+$slide-width: 75px;
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.carousel__wrap {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel__inner {
+  position: relative;
+  margin-top: 35px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.carousel__container {
+  height: 415px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel__slide-list {
+  height: 100%;
+  left: 50%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: $slide-width;
+  overflow: hidden;
+  //   width: calc(#{($slide-count + 0.5) * $slide-width * 2});
+}
+
+.carousel__btn {
+  align-items: center;
+  background: 0;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, 0) rotate(90deg);
+  -webkit-transform: translate(-50%, 0) rotate(90deg);
+  padding: 0;
+
+  &--prev {
+    top: -30px;
+    left: 50%;
+
+    &::before {
+      content: "";
+      background-image: url("https://bizweb.dktcdn.net/100/384/760/themes/761815/assets/back.svg?1629428774409");
+      height: 30px;
+      width: 30px;
+      display: block;
+    }
+  }
+
+  &--next {
+    bottom: -30px;
+    top: unset;
+    right: unset;
+
+    &::before {
+      content: "";
+      background-image: url("https://bizweb.dktcdn.net/100/384/760/themes/761815/assets/right-arrow.svg?1629428774409");
+      height: 30px;
+      width: 30px;
+      display: block;
+    }
+  }
+}

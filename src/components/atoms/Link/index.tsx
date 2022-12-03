@@ -4,7 +4,7 @@ import "./index.scss";
 interface Props {
   href: string;
   className?: string;
-  onClick: (e: any) => void;
+  onClick?: (e: any) => void;
   children?: React.ReactNode;
 }
 

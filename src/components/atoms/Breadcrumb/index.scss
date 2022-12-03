@@ -22,8 +22,8 @@
     }
 
     &__link {
-        font-size: 1rem;
-        line-height: 1.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
         color: var(--gray-700-color);
         text-decoration: none;
 
@@ -32,8 +32,8 @@
         }
 
         &-not {
-            font-size: 1rem;
-            line-height: 1.5rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
             color: var(--orange-400-color);
         }
     }

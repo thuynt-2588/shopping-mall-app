@@ -19,13 +19,13 @@ import {
 } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDCiUMoemUeQZmA_xQEau2rTIiEkCU-sVA",
-  authDomain: "fir-auth-shopping-mall.firebaseapp.com",
-  projectId: "fir-auth-shopping-mall",
-  storageBucket: "fir-auth-shopping-mall.appspot.com",
-  messagingSenderId: "648347849455",
-  appId: "1:648347849455:web:810097dd375f41f00c411a",
-  measurementId: "G-DFWSV8J63C",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
@@ -62,7 +62,11 @@ const logInWithEmailAndPassword = async (email: string, password: string) => {
   }
 };
 
-const registerWithEmailAndPassword = async (name: string, email: string, password: string) => {
+const registerWithEmailAndPassword = async (
+  name: string,
+  email: string,
+  password: string
+) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
@@ -81,4 +85,11 @@ const logout = () => {
   signOut(auth);
 };
 
-export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, logout };
+export {
+  auth,
+  db,
+  signInWithGoogle,
+  logInWithEmailAndPassword,
+  registerWithEmailAndPassword,
+  logout,
+};
