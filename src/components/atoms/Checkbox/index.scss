@@ -1,0 +1,57 @@
+.checkbox-label {
+  display: inline-flex;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  cursor: pointer;
+  color: #6f6f6f;
+  text-transform: inherit;
+  width: 100%;
+}
+
+.checkbox-input {
+  font-size: 18px;
+  height: 15px !important;
+  width: 15px;
+  line-height: 1.25rem;
+  border-radius: 2px;
+  padding: 0;
+  margin: 0 5px 0 0;
+  position: relative;
+
+  &.active {
+    &::before {
+      border-color: var(--orange-200-color);
+      background: var(--orange-200-color);
+    }
+
+    &::after {
+      content: "";
+      color: var(--white-color);
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      line-height: 15px;
+      top: 0;
+      font-size: 12px;
+      left: 0;
+      background-image: url(//bizweb.dktcdn.net/100/384/760/themes/761815/assets/check-symbol.svg?1629428774409);
+      background-size: 14px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &::before {
+    content: "";
+    margin-right: 5px;
+    border-radius: 2px;
+    font-size: 18px;
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    height: 15px !important;
+    width: 15px;
+  }
+}
