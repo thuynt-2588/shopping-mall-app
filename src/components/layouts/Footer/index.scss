@@ -1,0 +1,236 @@
+.footer {
+  background-color: var(--gray-100-color);
+  padding-top: 30px;
+
+  &__logo {
+    &-image {
+      max-width: 200px;
+      height: auto;
+    }
+  }
+
+  &__content {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 20px;
+    color: var(--dark-200-color);
+  }
+
+  &__social {
+    &-list {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    &-item {
+      a {
+        border: 1px solid #333;
+        font-size: 0.813rem;
+        line-height: 2.125rem;
+        width: 36px;
+        height: 36px;
+        border-radius: 3px;
+        text-align: center;
+        -webkit-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+        display: block;
+        position: relative;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+        }
+      }
+
+      &--facebook {
+        &:hover {
+          border-color: #3b5998;
+
+          svg {
+            fill: #3b5998;
+          }
+        }
+      }
+
+      &--twitter {
+        &:hover {
+          border-color: #1da1f2;
+
+          svg {
+            fill: #1da1f2;
+          }
+        }
+      }
+
+      &--youtube {
+        &:hover {
+          border-color: #ff0000;
+
+          svg {
+            fill: #ff0000;
+          }
+        }
+      }
+
+      &--instagram {
+        &:hover {
+          border-color: #5851db;
+
+          svg {
+            fill: #5851db;
+          }
+        }
+      }
+    }
+  }
+
+  &__heading {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-transform: capitalize;
+    color: var(--dark-200-color);
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  &-list {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  &-item {
+    margin-top: 8px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &__link {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      text-decoration: none;
+      color: var(--dark-200-color);
+      padding: 2px 0;
+      display: flex;
+      align-items: center;
+
+      &--not {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        text-decoration: none;
+        color: var(--dark-200-color);
+        padding: 2px 0;
+        display: block;
+
+        strong {
+          font-weight: bold;
+        }
+      }
+
+      &:hover {
+        color: var(--orange-200-color);
+      }
+    }
+
+    &__icon {
+      font-size: 1.6rem;
+      margin: -1px 8px 0 0;
+    }
+  }
+
+  &__store {
+    margin-top: 15px;
+    &-link {
+      display: inline-block;
+      width: 100%;
+      background-color: var(--dark-400-color);
+      color: var(--white-color);
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      padding: 0 10px;
+      font-weight: 500;
+      text-decoration: none;
+
+      &:hover {
+        background-color: var(--orange-200-color);
+      }
+    }
+  }
+
+  &__info {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+    margin-top: 40px;
+    color: var(--dark-200-color);
+    order: 2;
+
+    p {
+      margin-bottom: 7px;
+    }
+  }
+
+  &__fanpage {
+    &-title {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-top: 20px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__bottom {
+    font-size: 12px;
+    line-height: 1rem;
+    padding: 10px 0;
+    margin-top: 20px;
+    color: var(--gray-550-color);
+    background-color: var(--gray-50-color);
+    border-top: 1px solid var(--gray-150-color);
+  }
+
+  &-text {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    margin: 0;
+    text-align: center;
+    color: var();
+  }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+  .footer {
+    &__logo {
+      text-align: center;
+    }
+  }
+
+  .footer__fanpage-wrap {
+    order: 1;
+  }
+
+  .footer__info-wrap {
+    order: 2;
+  }
+}
+
+/* Mobile & Tablet */
+@media (max-width: 1023px) {
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+}
