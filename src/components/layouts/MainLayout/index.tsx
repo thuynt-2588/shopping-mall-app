@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
 import SideBar from "../Header/SideBar";
@@ -8,10 +8,16 @@ type Props = {
 };
 
 const MainLayout: React.FC<Props> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggleSidebar = () => {
+    isOpen ? setIsOpen(false) : setIsOpen(true);
+  };
+
   return (
     <div className="shopping-app">
-      <Header />
-      <SideBar />
+      <Header onToggleSidebar={handleToggleSidebar} />
+      <SideBar isOpenSideBar={isOpen} onToggleSidebar={handleToggleSidebar} />
       {children}
       <Footer />
     </div>
