@@ -1,3 +1,33 @@
 button {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  position: relative;
+  display: inline-block;
+  padding: 0.5rem 1.75rem;
+  line-height: normal;
+  border: 0.0625rem solid var(--orange-200-color);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--white-color);
+  border-radius: 0.25rem;
   cursor: pointer;
+}
+
+.btn-logout {
+  background-color: transparent;
+  border: none;
+  padding: 10px 8px;
+  padding-right: 16px;
+  color: var(--gray-800-color);
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--orange-200-color);
 }

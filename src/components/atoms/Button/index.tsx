@@ -2,7 +2,7 @@ import React from "react";
 import "./index.scss";
 
 interface Props {
-  className: string;
+  className?: string;
   onClick: (e: any) => void;
   children?: React.ReactNode;
 }

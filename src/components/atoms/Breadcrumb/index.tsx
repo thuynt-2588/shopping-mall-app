@@ -10,7 +10,7 @@ type Props = {
 const Breadcrumb: React.FC<Props> = ({ items }) => {
   return (
     <section className="breadcrumb">
-      <div className="container">
+      <div className="container grid wide">
         <ul className="breadcrumb__ul">
           {items?.map(({ label, key, url }) => (
             <li key={key} className="breadcrumb__li">

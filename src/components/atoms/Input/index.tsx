@@ -3,15 +3,15 @@ import { clsx } from "clsx";
 import "./index.scss";
 
 type Props = {
-  value: string;
-  label: string;
-  required: boolean;
-  name: string;
+  value?: string;
+  label?: string;
+  required?: boolean;
+  name?: string;
   className?: string;
-  placeholder: string;
+  placeholder?: string;
   type: string;
   onChange: (e: any) => void;
-  errors?: string[];
+  errors?: string;
 };
 
 export const Input: React.FC<Props> = ({
@@ -30,7 +30,7 @@ export const Input: React.FC<Props> = ({
       {label && (
         <label htmlFor="input-field">
           {label}
-          <span className={clsx(required || false)}>*</span>
+          <span className={clsx(required || false, "required")}>*</span>
         </label>
       )}
       <input

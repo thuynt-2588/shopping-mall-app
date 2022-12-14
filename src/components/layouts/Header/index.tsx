@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="container">
+      <div className="container grid wide">
         <div className="header__navbar">
           <div className="header__menu">
             <Button className="header__menu-button" onClick={onToggleSidebar}>
